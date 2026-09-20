@@ -169,11 +169,11 @@ function Dots({onSendScore}) {
 														<ListGroup className={`text-center shadow ${styles.floating}`}
 														                   style={{ background: "linear-gradient(135deg, #C0C0C0, #E8E8E8)", borderRadius: "10px", textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>
 																<ListGroup.Item className="text-center">Select dots of the same color by clicking on them 👆🖱️</ListGroup.Item>
-																<ListGroup.Item className="text-center">Hit right click to execute the selected dot 🖱️👆</ListGroup.Item>
+																<ListGroup.Item className="text-center">Right-click or use Execute dots to connect your selection 🖱️👆</ListGroup.Item>
 																<ListGroup.Item className="text-center">There are dots of 4 colors: <img src={`${process.env.PUBLIC_URL}/images/dots/red.png`} alt="red" width="20" height="20" /> <img src={`${process.env.PUBLIC_URL}/images/dots/green.png`} alt="green" width="20" height="20" /> <img src={`${process.env.PUBLIC_URL}/images/dots/blue.png`} alt="blue" width="20" height="20" /> <img src={`${process.env.PUBLIC_URL}/images/dots/yellow.png`} alt="yellow" width="20" height="20" /></ListGroup.Item>
 																<ListGroup.Item className="text-center">Buy and use power-ups to help you reach your goals.</ListGroup.Item>
 																<ListGroup.Item className="text-center">There are 3 types of power-ups: Bomb <img src={`${process.env.PUBLIC_URL}/images/dots/bomb.svg`} alt="bomb" width="20" height="20" />, Extra Moves <img src={`${process.env.PUBLIC_URL}/images/dots/ExtraMoves.svg`} alt="extra-moves" width="20" height="20" /> and Score Multiplier <img src={`${process.env.PUBLIC_URL}/images/dots/ScoreMultiplier.png`} alt="score-multiplier" width="20" height="20" />.</ListGroup.Item>
-																<ListGroup.Item className="text-center">Feel free to compete and get into the Hall Of Fame! 👑👑👑</ListGroup.Item>
+																<ListGroup.Item className="text-center">Browser edition: play as a guest. Shared scores need the original server.</ListGroup.Item>
 														</ListGroup>
 												</Col>
 										</Row>

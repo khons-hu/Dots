@@ -1,26 +1,21 @@
 Dots - Components Programming - 2023
 ==========================
-## Browser demo (2026)
+## Browser edition (2026)
 
-`demo/` is a standalone browser adaptation of this game. It has five levels, colour targets, score-funded power-ups, keyboard and touch controls, seven languages, and light/dark themes.
+The hosted build reuses the original React game components, dot images, blue background, level picker, stats, shop and result dialog from 2023. A local game service replaces the Java API for guest play. Buying and using power-ups are separate, as in the original interface.
 
-Each tab has its own game. Reloading starts over. There are no accounts, shared leaderboards, tracking, or backend services in this version. The original React and Java project remains below.
+No login, shared scores, comments or ratings are connected in this edition. Each tab has its own game and reloading starts over. The original Java backend and full React application remain available in this repository.
 
-The adaptation also rejects invalid moves without spending a turn, blocks unaffordable power-ups, and ensures a matching pair is available.
-
-Run locally:
+Small fixes: invalid moves do not spend turns, power-ups require enough points and owned inventory, and a matching pair is always available. The board fits mobile screens and an Execute button supplements right-click. Reduced-motion preferences are respected.
 
 ```sh
-python3 -m http.server 4180 --directory demo
+npm ci
+npm test
+npm run build
+python3 -m http.server 4181 --directory dist
 ```
 
-Test the game rules and translation coverage:
-
-```sh
-node --test demo/game.test.mjs
-```
-
-The root `vercel.json` publishes `demo/` as a static site without a build step or server. Hosting setup is pending.
+Vercel builds from the repository root and serves `dist/`. Hosting setup is pending. The earlier standalone redesign in `demo/` is not the deployment entry point.
 
 # Video
 [Dots - KP - 2023](https://www.youtube.com/watch?v=zQYQL29PYsc) - Final assignment

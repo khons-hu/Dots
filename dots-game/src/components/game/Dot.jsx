@@ -2,7 +2,7 @@ import React from "react";
 import { useSpring, animated } from "react-spring";
 import styles from "./Dot.module.css";
 
-function Dot({ dot, prevDot, onSelectDot, onExecute }) {
+function Dot({ dot, prevDot, onSelectDot, onExecute, label }) {
 		const yOffset = prevDot && prevDot.y - dot.y;
 
 		const animation = useSpring({
@@ -36,9 +36,9 @@ function Dot({ dot, prevDot, onSelectDot, onExecute }) {
 		};
 
 		return (
-				<td>
-      <span
-		      className={styles.dotWrapper}
+				
+      <button type="button" aria-label={label || dot?.color} aria-pressed={dot.selected}
+		      className={`${styles.dotWrapper} dot-button`}
 		      onClick={handleDotClicked}
 		      onContextMenu={handleDotRightClick}
       >
@@ -48,8 +48,8 @@ function Dot({ dot, prevDot, onSelectDot, onExecute }) {
 		        alt={dot?.color}
 		        width="50"
         />
-      </span>
-				</td>
+      </button>
+				
 		);
 }
 

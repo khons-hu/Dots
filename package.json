@@ -1,0 +1,19 @@
+{
+  "name": "dots-browser",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node browser/build.mjs",
+    "test": "node --test browser/*.test.mjs"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-bootstrap": "2.7.4",
+    "bootstrap": "5.2.3",
+    "@react-spring/web": "9.7.5"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
+}

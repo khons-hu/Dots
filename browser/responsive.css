@@ -1,0 +1,5 @@
+html,body,#root{min-height:100%;height:auto}.App{height:auto;min-height:100vh;padding-bottom:65px}.footer .text-muted{color:#fff!important}
+.dot-button{padding:0;border:0;background:transparent;line-height:0;border-radius:50%;max-width:100%}.dot-button:focus-visible{outline:3px solid #fff;outline-offset:3px}.dot-button img{max-width:100%;height:auto}
+.browser-board{display:grid;grid-template-columns:repeat(var(--size),minmax(0,50px));gap:10px 20px;margin:20px auto;width:max-content;max-width:100%}
+@media(max-width:600px){.browser-board{width:100%;gap:8px}.container{--bs-gutter-x:1rem}.card-title{font-size:1.1rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.falling-dot{display:none}}
