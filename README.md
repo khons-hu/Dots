@@ -2,6 +2,8 @@ Dots - Components Programming - 2023
 ==========================
 ## Browser edition (2026)
 
+[Play Dots ↗](https://dots-khonsu.vercel.app/)
+
 The hosted build reuses the original React game components, dot images, blue background, level picker, stats, shop and result dialog from 2023. A local game service replaces the Java API for guest play. Buying and using power-ups are separate, as in the original interface.
 
 No login, shared scores, comments or ratings are connected in this edition. Each tab has its own game and reloading starts over. The original Java backend and full React application remain available in this repository.
@@ -15,7 +17,7 @@ npm run build
 python3 -m http.server 4181 --directory dist
 ```
 
-Vercel builds from the repository root and serves `dist/`. Hosting setup is pending. The earlier standalone redesign in `demo/` is not the deployment entry point.
+Vercel builds from the repository root and serves `dist/`. The public demo is hosted on Vercel, connected to this repository’s `main` branch. The earlier standalone redesign in `demo/` is not the deployment entry point.
 
 # Video
 [Dots - KP - 2023](https://www.youtube.com/watch?v=zQYQL29PYsc) - Final assignment
