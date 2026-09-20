@@ -1,5 +1,27 @@
 Dots - Components Programming - 2023
 ==========================
+## Browser demo (2026)
+
+`demo/` is a standalone browser adaptation of this game. It has five levels, colour targets, score-funded power-ups, keyboard and touch controls, seven languages, and light/dark themes.
+
+Each tab has its own game. Reloading starts over. There are no accounts, shared leaderboards, tracking, or backend services in this version. The original React and Java project remains below.
+
+The adaptation also rejects invalid moves without spending a turn, blocks unaffordable power-ups, and ensures a matching pair is available.
+
+Run locally:
+
+```sh
+python3 -m http.server 4180 --directory demo
+```
+
+Test the game rules and translation coverage:
+
+```sh
+node --test demo/game.test.mjs
+```
+
+The root `vercel.json` publishes `demo/` as a static site without a build step or server. Hosting setup is pending.
+
 # Video
 [Dots - KP - 2023](https://www.youtube.com/watch?v=zQYQL29PYsc) - Final assignment
 
