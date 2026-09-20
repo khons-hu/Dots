@@ -36,7 +36,7 @@ function Dot({ dot, prevDot, onSelectDot, onExecute, label }) {
 		};
 
 		return (
-				
+
       <button type="button" aria-label={label || dot?.color} aria-pressed={dot.selected}
 		      className={`${styles.dotWrapper} dot-button`}
 		      onClick={handleDotClicked}
@@ -49,7 +49,7 @@ function Dot({ dot, prevDot, onSelectDot, onExecute, label }) {
 		        width="50"
         />
       </button>
-				
+
 		);
 }
 
