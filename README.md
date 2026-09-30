@@ -2,7 +2,7 @@ Dots - Components Programming - 2023
 ==========================
 ## Browser edition (2026)
 
-[Play Dots ↗](https://dots-khonsu.vercel.app/)
+[Play Dots ↗](https://dots.khns.dev/)
 
 The hosted build reuses the original React game components, dot images, blue background, level picker, stats, shop and result dialog from 2023. A local game service replaces the Java API for guest play. Buying and using power-ups are separate, as in the original interface.
 
