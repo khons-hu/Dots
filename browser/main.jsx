@@ -1,14 +1,46 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {createRoot} from 'react-dom/client';
-import {Navbar,Container,Nav} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../dots-game/src/App.css';
-import AnimatedBackground from '../dots-game/src/AnimatedBackground.js';
 import Dots from '../dots-game/src/components/game/Dots.jsx';
-import Footer from '../dots-game/src/components/Footer.jsx';
 import './responsive.css';
-createRoot(document.getElementById('root')).render(<div className="App mb-5">
- <AnimatedBackground/>
- <Navbar bg="dark" variant="dark" fixed="top"><Container fluid><Navbar.Brand href="/"><img src="/images/dots/dots_logo.png" width="50" height="50" alt="Dots"/></Navbar.Brand><Nav className="me-auto"><Nav.Link href="/">Play</Nav.Link><Nav.Link href="https://github.com/khons-hu/Dots">Source</Nav.Link></Nav><span className="text-light small">2023 · browser edition</span></Container></Navbar>
- <main className="container index-container main-content"><Dots/><p className="text-center light-text mt-4 small">Guest game · no account or shared leaderboard · reloading starts over</p></main><Footer/>
-</div>);
+
+function BrowserApp() {
+ const readPreferences = () => ({theme: window.DotsPreferences.theme, motion: window.DotsPreferences.motion});
+ const [preferences, setPreferences] = useState(readPreferences);
+ useEffect(() => {
+  const update = () => setPreferences(readPreferences());
+  window.addEventListener('dots:preferences', update);
+  update();
+  return () => window.removeEventListener('dots:preferences', update);
+ }, []);
+ const themeLabel = preferences.theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+ const nextMotion = preferences.motion === 'system' ? 'on' : preferences.motion === 'on' ? 'off' : 'system';
+ return <div className="App browser-app">
+  <a className="skip-link" href="#game">Skip to game</a>
+  <header className="site-header">
+   <a className="brand" href="/" aria-label="Dots home">
+    <img src="/images/dots/dots_logo.png" width="38" height="38" alt=""/>
+    <span>Dots<small>BY KHONSU</small></span>
+   </a>
+   <nav className="site-nav" aria-label="Project links">
+    <a href="https://khns.dev/">Portfolio ↗</a>
+    <a href="https://github.com/khons-hu/Dots">Source ↗</a>
+   </nav>
+   <div className="header-tools">
+    <button className="theme-toggle" type="button" aria-label={themeLabel} title={themeLabel} onClick={() => window.DotsPreferences.setTheme(preferences.theme === 'dark' ? 'light' : 'dark')}>
+     <span aria-hidden="true">{preferences.theme === 'dark' ? '☀' : '☾'}</span>
+    </button>
+    <button className="motion-toggle" type="button" aria-label={`Motion: ${preferences.motion}. Switch to ${nextMotion}.`} title="Cycle motion through system, on and off" onClick={() => window.DotsPreferences.setMotion(nextMotion)}>Motion: {preferences.motion}</button>
+   </div>
+  </header>
+  <main id="game" className="container game-region" tabIndex="-1">
+   <p className="eyebrow">2023 · browser edition</p>
+   <Dots/>
+   <p className="session-note">Guest game · no account or shared leaderboard · reloading starts over</p>
+  </main>
+  <footer className="site-footer"><span>Original game, a new home.</span><a href="https://khns.dev/">Built by khonsu ↗</a></footer>
+ </div>;
+}
+
+createRoot(document.getElementById('root')).render(<BrowserApp/>);

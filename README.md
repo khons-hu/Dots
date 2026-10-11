@@ -4,11 +4,13 @@ Dots - Components Programming - 2023
 
 [Play Dots ↗](https://dots.khns.dev/)
 
-The hosted build reuses the original React game components, dot images, blue background, level picker, stats, shop and result dialog from 2023. A local game service replaces the Java API for guest play. Buying and using power-ups are separate, as in the original interface.
+The hosted build reuses the original React game components, dot images, level picker, stats, shop and result dialog from 2023. A local game service replaces the Java API for guest play. Buying and using power-ups are separate, as in the original interface.
 
 No login, shared scores, comments or ratings are connected in this edition. Each tab has its own game and reloading starts over. The original Java backend and full React application remain available in this repository.
 
-Small fixes: invalid moves do not spend turns, power-ups require enough points and owned inventory, and a matching pair is always available. The board fits mobile screens and an Execute button supplements right-click. Reduced-motion preferences are respected.
+Small fixes: invalid moves do not spend turns, power-ups require enough points and owned inventory, and a matching pair is always available. The board fits mobile screens and an Execute button supplements right-click.
+
+The browser shell uses the portfolio’s blue-gray light and midnight dark palettes, Georgia opening title, Avenir interface text, visible focus rings and compact header controls. Theme follows the system until a saved choice is made and stays in sync across tabs. Motion can follow the system or be set on or off. Decorative falling dots and floating welcome text are removed, while the original board images and gameplay remain. The prepaint preferences script is served locally and works with the existing content security policy.
 
 ```sh
 npm ci
