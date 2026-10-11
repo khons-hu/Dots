@@ -3,7 +3,8 @@ import { useSpring, animated } from "react-spring";
 import styles from "./Dot.module.css";
 
 function Dot({ dot, prevDot, onSelectDot, onExecute, label }) {
-		const yOffset = prevDot && prevDot.y - dot.y;
+		// The browser board has no previous position when a dot first appears.
+		const yOffset = prevDot ? prevDot.y - dot.y : 0;
 
 		const animation = useSpring({
 				from: { transform: `translateY(${yOffset * 100}%)` },
