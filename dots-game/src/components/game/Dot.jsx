@@ -15,13 +15,13 @@ function Dot({ dot, prevDot, onSelectDot, onExecute, label }) {
 		let dotImage;
 
 		if ("BLUE".localeCompare(dot?.color) === 0) {
-				dotImage = dot.selected ? 'images/dots/blue_selected.png' : 'images/dots/blue.png';
+				dotImage = dot.selected ? 'images/dots/blue_selected.webp' : 'images/dots/blue.webp';
 		} else if ("RED".localeCompare(dot?.color) === 0) {
-				dotImage = dot.selected ? 'images/dots/red_selected.png' : 'images/dots/red.png';
+				dotImage = dot.selected ? 'images/dots/red_selected.webp' : 'images/dots/red.webp';
 		} else if ("GREEN".localeCompare(dot?.color) === 0) {
-				dotImage = dot.selected ? 'images/dots/green_selected.png' : 'images/dots/green.png';
+				dotImage = dot.selected ? 'images/dots/green_selected.webp' : 'images/dots/green.webp';
 		} else if ("YELLOW".localeCompare(dot?.color) === 0) {
-				dotImage = dot.selected ? 'images/dots/yellow_selected.png' : 'images/dots/yellow.png';
+				dotImage = dot.selected ? 'images/dots/yellow_selected.webp' : 'images/dots/yellow.webp';
 		}
 
 		const handleDotClicked = () => {

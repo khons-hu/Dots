@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {createRoot} from 'react-dom/client';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './bootstrap.scss';
 import '../dots-game/src/App.css';
 import Dots from '../dots-game/src/components/game/Dots.jsx';
 import './responsive.css';
@@ -20,7 +20,7 @@ function BrowserApp() {
   <a className="skip-link" href="#game">Skip to game</a>
   <header className="site-header">
    <a className="brand" href="/" aria-label="Dots home">
-    <img src="/images/dots/dots_logo.png" width="38" height="38" alt=""/>
+    <img src="/images/dots/dots_logo.webp" width="38" height="38" alt=""/>
     <span>Dots<small>BY KHONSU</small></span>
    </a>
    <nav className="site-nav" aria-label="Project links">

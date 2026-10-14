@@ -170,9 +170,9 @@ function Dots({onSendScore}) {
 														                   style={{ background: "linear-gradient(135deg, #C0C0C0, #E8E8E8)", borderRadius: "10px", textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>
 																<ListGroup.Item className="text-center">Select dots of the same color by clicking on them 👆🖱️</ListGroup.Item>
 																<ListGroup.Item className="text-center">Right-click or use Execute dots to connect your selection 🖱️👆</ListGroup.Item>
-																<ListGroup.Item className="text-center">There are dots of 4 colors: <img src={`${process.env.PUBLIC_URL}/images/dots/red.png`} alt="red" width="20" height="20" /> <img src={`${process.env.PUBLIC_URL}/images/dots/green.png`} alt="green" width="20" height="20" /> <img src={`${process.env.PUBLIC_URL}/images/dots/blue.png`} alt="blue" width="20" height="20" /> <img src={`${process.env.PUBLIC_URL}/images/dots/yellow.png`} alt="yellow" width="20" height="20" /></ListGroup.Item>
+																<ListGroup.Item className="text-center">There are dots of 4 colors: <img src={`${process.env.PUBLIC_URL}/images/dots/red.webp`} alt="red" width="20" height="20" /> <img src={`${process.env.PUBLIC_URL}/images/dots/green.webp`} alt="green" width="20" height="20" /> <img src={`${process.env.PUBLIC_URL}/images/dots/blue.webp`} alt="blue" width="20" height="20" /> <img src={`${process.env.PUBLIC_URL}/images/dots/yellow.webp`} alt="yellow" width="20" height="20" /></ListGroup.Item>
 																<ListGroup.Item className="text-center">Buy and use power-ups to help you reach your goals.</ListGroup.Item>
-																<ListGroup.Item className="text-center">There are 3 types of power-ups: Bomb <img src={`${process.env.PUBLIC_URL}/images/dots/bomb.svg`} alt="bomb" width="20" height="20" />, Extra Moves <img src={`${process.env.PUBLIC_URL}/images/dots/ExtraMoves.svg`} alt="extra-moves" width="20" height="20" /> and Score Multiplier <img src={`${process.env.PUBLIC_URL}/images/dots/ScoreMultiplier.png`} alt="score-multiplier" width="20" height="20" />.</ListGroup.Item>
+																<ListGroup.Item className="text-center">There are 3 types of power-ups: Bomb <img src={`${process.env.PUBLIC_URL}/images/dots/bomb.svg`} alt="bomb" width="20" height="20" />, Extra Moves <img src={`${process.env.PUBLIC_URL}/images/dots/ExtraMoves.svg`} alt="extra-moves" width="20" height="20" /> and Score Multiplier <img src={`${process.env.PUBLIC_URL}/images/dots/ScoreMultiplier.webp`} alt="score-multiplier" width="20" height="20" />.</ListGroup.Item>
 																<ListGroup.Item className="text-center">Browser edition: play as a guest. Shared scores need the original server.</ListGroup.Item>
 														</ListGroup>
 												</Col>
@@ -211,7 +211,7 @@ function Dots({onSendScore}) {
 																						<>
 																								{gameBoard?.executedRedDots < gameBoard?.neededRedDotsToBeExecuted && (
 																										<>
-																												<img src={`${process.env.PUBLIC_URL}/images/dots/red.png`} alt="red" width="30" height="30" />
+																												<img src={`${process.env.PUBLIC_URL}/images/dots/red.webp`} alt="red" width="30" height="30" />
 																												<Badge bg="secondary">
 																														{gameBoard?.executedRedDots}/{gameBoard?.neededRedDotsToBeExecuted}
 																												</Badge>
@@ -220,7 +220,7 @@ function Dots({onSendScore}) {
 																								{" "}
 																								{gameBoard?.executedGreenDots < gameBoard?.neededGreenDotsToBeExecuted && (
 																										<>
-																												<img src={`${process.env.PUBLIC_URL}/images/dots/green.png`} alt="green" width="30" height="30" />
+																												<img src={`${process.env.PUBLIC_URL}/images/dots/green.webp`} alt="green" width="30" height="30" />
 																												<Badge bg="secondary">
 																														{gameBoard?.executedGreenDots}/{gameBoard?.neededGreenDotsToBeExecuted}
 																												</Badge>
@@ -229,7 +229,7 @@ function Dots({onSendScore}) {
 																								{" "}
 																								{gameBoard?.executedBlueDots < gameBoard?.neededBlueDotsToBeExecuted && (
 																										<>
-																												<img src={`${process.env.PUBLIC_URL}/images/dots/blue.png`} alt="blue" width="30" height="30" />
+																												<img src={`${process.env.PUBLIC_URL}/images/dots/blue.webp`} alt="blue" width="30" height="30" />
 																												<Badge bg="secondary">
 																														{gameBoard?.executedBlueDots}/{gameBoard?.neededBlueDotsToBeExecuted}
 																												</Badge>
@@ -238,7 +238,7 @@ function Dots({onSendScore}) {
 																								{" "}
 																								{gameBoard?.executedYellowDots < gameBoard?.neededYellowDotsToBeExecuted && (
 																										<>
-																												<img src={`${process.env.PUBLIC_URL}/images/dots/yellow.png`} alt="yellow" width="30" height="30" />
+																												<img src={`${process.env.PUBLIC_URL}/images/dots/yellow.webp`} alt="yellow" width="30" height="30" />
 																												<Badge bg="secondary">
 																														{gameBoard?.executedYellowDots}/{gameBoard?.neededYellowDotsToBeExecuted}
 																												</Badge>
@@ -287,7 +287,7 @@ function Dots({onSendScore}) {
 																				{" "}
 																		</Card.Title>
 																		<Card.Title>
-																				<img src={`${process.env.PUBLIC_URL}/images/dots/ScoreMultiplier.png`} alt="scoreMultiply" width="30" height="30" />{" "}
+																				<img src={`${process.env.PUBLIC_URL}/images/dots/ScoreMultiplier.webp`} alt="scoreMultiply" width="30" height="30" />{" "}
 																				<Badge bg="info">
 																						{gameBoard?.powerUpShop?.availableScoreMultipliers?.length}
 																				</Badge>{" "}
@@ -321,7 +321,7 @@ function Dots({onSendScore}) {
 																						<br />
 																						{powerUpsCount.ScoreMultiplier > 0 && (
 																								<Button variant="warning" onClick={() => handleUsePowerUp("ScoreMultiplier")} disabled={gameBoard?.gameState !== "PLAYING" || powerUpsCount.ScoreMultiplier === 0} style={{ marginBottom: '10px' }}>
-																										<img src={`${process.env.PUBLIC_URL}/images/dots/ScoreMultiplier.png`} alt="scoreMultiply" width="30" height="30" /> {powerUpsCount.ScoreMultiplier}
+																										<img src={`${process.env.PUBLIC_URL}/images/dots/ScoreMultiplier.webp`} alt="scoreMultiply" width="30" height="30" /> {powerUpsCount.ScoreMultiplier}
 																								</Button>
 																						)}
 																				</Card.Title>
